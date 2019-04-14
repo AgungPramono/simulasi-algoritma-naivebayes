@@ -42,10 +42,11 @@ public class ImportDialog extends javax.swing.JDialog{
         initComponents();
         setLocationRelativeTo(null);
         setTitle(".: Import Wizard :.");
-        txtSparator.setText(",");
+        semiColon.setSelected(true);
         //progresBar = new JProgressBar(0, 100);
         //progresBar.setValue(0);
         //progresBar.setStringPainted(true);
+        progresBar.setVisible(false);
         btnProses.setEnabled(false);
     }
 
@@ -62,12 +63,14 @@ public class ImportDialog extends javax.swing.JDialog{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtPathFile = new javax.swing.JTextField();
         btnBrowse = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        txtSparator = new javax.swing.JTextField();
+        semiColon = new javax.swing.JRadioButton();
+        coma = new javax.swing.JRadioButton();
         btnBatal = new javax.swing.JButton();
         btnProses = new javax.swing.JButton();
         progresBar = new javax.swing.JProgressBar();
@@ -98,7 +101,11 @@ public class ImportDialog extends javax.swing.JDialog{
 
         jLabel2.setText("Sparator");
 
-        txtSparator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        buttonGroup1.add(semiColon);
+        semiColon.setText(";");
+
+        buttonGroup1.add(coma);
+        coma.setText(",");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,12 +119,14 @@ public class ImportDialog extends javax.swing.JDialog{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtSparator, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtPathFile)
+                        .addComponent(txtPathFile, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBrowse)))
+                        .addComponent(btnBrowse))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(semiColon)
+                        .addGap(18, 18, 18)
+                        .addComponent(coma)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -131,8 +140,9 @@ public class ImportDialog extends javax.swing.JDialog{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtSparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(semiColon)
+                    .addComponent(coma))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         btnBatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/close.png"))); // NOI18N
@@ -277,15 +287,16 @@ public class ImportDialog extends javax.swing.JDialog{
 
     public void getMessage(){
         //JOptionPane.showMessageDialog(this, message,"Informasi",JOptionPane.INFORMATION_MESSAGE);
+        progresBar.setVisible(false);
         int resp = JOptionPane.showConfirmDialog(this, "Import data selesai. lakukan import kembali ?",
                 "Konfirmasi",
                 JOptionPane.YES_NO_OPTION);
         
-        if (resp == 0) {
+        if (resp == JOptionPane.YES_OPTION) {
             selectedFile = null;
             txtPathFile.setText("");
         }else{
-            this.dispose();
+            btnBatal.doClick();
         }       
     }
     
@@ -294,7 +305,15 @@ public class ImportDialog extends javax.swing.JDialog{
         @Override
         protected Void doInBackground() throws Exception {
             try {
-                String sparator = txtSparator.getText();
+                progresBar.setVisible(true);
+                String sparator = null;
+                
+                if(semiColon.isSelected()){
+                    sparator = semiColon.getText();
+                }else if(coma.isSelected()){
+                    sparator = coma.getText();
+                }
+                
                 HasilImportDataset hasil = DatasetImporter.proses(selectedFile, sparator);
                 for (Customer n : hasil.getSucces()) {
                     Main.getMasterService().save(n);
@@ -337,6 +356,8 @@ public class ImportDialog extends javax.swing.JDialog{
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnBrowse;
     private javax.swing.JButton btnProses;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton coma;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -345,7 +366,7 @@ public class ImportDialog extends javax.swing.JDialog{
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblStatus;
     private javax.swing.JProgressBar progresBar;
+    private javax.swing.JRadioButton semiColon;
     private javax.swing.JTextField txtPathFile;
-    private javax.swing.JTextField txtSparator;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,11 +4,6 @@ import com.agung.nb.helper.ConnectionHelper;
 import com.agung.nb.service.MasterService;
 import com.agung.nb.service.ProgressService;
 import com.agung.nb.ui.MainFrame;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.Properties;
-import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
@@ -32,7 +27,7 @@ public class Main {
     public static ProgressService getProsesService() {
         return prosesService;
     }
-
+   
     public static void main(String[] args) throws Exception {
         masterService = new MasterService();
         prosesService = new ProgressService();
@@ -56,7 +51,7 @@ public class Main {
 //            UIManager.setLookAndFeel("com.jtattoo.plaf.aero.AeroLookAndFeel");
            
              for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
