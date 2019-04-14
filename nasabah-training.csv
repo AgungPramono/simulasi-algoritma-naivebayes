@@ -1,0 +1,22 @@
+nama_anggota;penghasilan;status;status_rumah;pinjaman;pekerjaan;klasifikasi
+x1;>=4jt;menikah;pribadi;>4jt;pns;LANCAR
+x3;<4jt;menikah;sewa;>4jt;pns;MACET
+x4;<4jt;menikah;pribadi;>4jt;swasta;MACET
+x6;>=4jt;belum menikah;pribadi;>4jt;swasta;LANCAR
+x7;<4jt;menikah;sewa;>4jt;swasta;MACET
+x8;>=4jt;belum menikah;pribadi;3jt-4jt;pns;LANCAR
+x9;<4jt;menikah;pribadi;>4jt;swasta;MACET
+x10;>=4jt;belum menikah;sewa;>4jt;pns;LANCAR
+x11;>=4jt;menikah;pribadi;3jt-4jt;pns;LANCAR
+x12;<4jt;menikah;sewa;>4jt;swasta;LANCAR
+x13;>=4jt;belum menikah;pribadi;>4jt;pns;MACET
+x14;>=4jt;menikah;pribadi;>4jt;swasta;LANCAR
+x15;<4jt;belum menikah;pribadi;3jt-4jt;pns;LANCAR
+x16;>=4jt;belum menikah;sewa;>4jt;swasta;MACET
+x17;>=4jt;menikah;pribadi;3jt-4jt;pns;LANCAR
+x18;<4jt;menikah;pribadi;>4jt;swasta;MACET
+x19;>=4jt;menikah;pribadi;3jt-4jt;pns;LANCAR
+x20;>=4jt;menikah;pribadi;>4jt;pns;LANCAR
+x21;<4jt;belum menikah;sewa;3jt-4jt;swasta;MACET
+x2;>=4jt;menikah;pribadi;>4jt;pns;LANCAR
+x22;>=4jt;menikah;pribadi;>4jt;swasta;LANCAR
