@@ -12,10 +12,17 @@
  */
 package com.agung.nb.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  *
  * @author agung
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Nasabah {
     private Integer id;
     private String namaNasabah;
@@ -26,68 +33,4 @@ public class Nasabah {
     private String pekerjaan;
     private String klasifikasi;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNamaNasabah() {
-        return namaNasabah;
-    }
-
-    public void setNamaNasabah(String namaNasabah) {
-        this.namaNasabah = namaNasabah;
-    }
-
-    public String getPenghasilan() {
-        return penghasilan;
-    }
-
-    public void setPenghasilan(String penghasilan) {
-        this.penghasilan = penghasilan;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatusRumah() {
-        return statusRumah;
-    }
-
-    public void setStatusRumah(String status_rumah) {
-        this.statusRumah = status_rumah;
-    }
-
-    public String getPinjaman() {
-        return pinjaman;
-    }
-
-    public void setPinjaman(String pinjaman) {
-        this.pinjaman = pinjaman;
-    }
-
-    public String getPekerjaan() {
-        return pekerjaan;
-    }
-
-    public void setPekerjaan(String pekerjaan) {
-        this.pekerjaan = pekerjaan;
-    }
-
-    public String getKlasifikasi() {
-        return klasifikasi;
-    }
-
-    public void setKlasifikasi(String klasifikasi) {
-        this.klasifikasi = klasifikasi;
-    }
-    
 }
