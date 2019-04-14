@@ -22,12 +22,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author agung
  */
 public class DatasetImporter {
+    
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(DatasetImporter.class);
 
     public static HasilImportDataset proses(File file,String sparator) throws FileNotFoundException {
         try {
@@ -66,7 +69,7 @@ public class DatasetImporter {
 
             return hasil;
         } catch (IOException ex) {
-            Logger.getLogger(DatasetImporter.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("Error Read File {}", ex.fillInStackTrace());
         }
         return null;
     }
