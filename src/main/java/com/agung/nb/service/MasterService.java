@@ -14,6 +14,7 @@ package com.agung.nb.service;
 
 import com.agung.nb.dao.CustomerDao;
 import com.agung.nb.domain.Customer;
+import com.agung.nb.helper.Status;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -72,10 +73,10 @@ public class MasterService{
         }
     }
     
-    public List<String> selectAttributByParam(String param){
-        if (param != null) {
+    public List<String> selectAttributByParam(Status paramConstan){
+        if (paramConstan != null) {
             try {
-                return nd.getAttributByParameter(param);
+                return nd.getAttributByParameter(paramConstan.toString());
             } catch (SQLException ex) {
             }
         }

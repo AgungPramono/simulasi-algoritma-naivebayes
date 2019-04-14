@@ -15,6 +15,7 @@ package com.agung.nb.ui;
 import com.agung.nb.Main;
 import com.agung.nb.core.NaiveBayesEngine;
 import com.agung.nb.domain.Testing;
+import com.agung.nb.helper.Status;
 import com.agung.nb.modul.TableUtil;
 import com.agung.nb.modul.TestingTableModel;
 import java.text.DecimalFormat;
@@ -60,28 +61,28 @@ public class PanelTesting extends javax.swing.JPanel {
         cbStatus.removeAllItems();
         cbStatusRumah.removeAllItems();
         cbPinjaman.removeAllItems();
-        List<String> listPenghasilan = Main.getMasterService().selectAttributByParam("penghasilan");
+        List<String> listPenghasilan = Main.getMasterService().selectAttributByParam(Status.PENGHASILAN);
 
         for (String r : listPenghasilan) {
             cbPenghasilan.addItem(r);
         }
 
-        List<String> listStatus = Main.getMasterService().selectAttributByParam("status");
+        List<String> listStatus = Main.getMasterService().selectAttributByParam(Status.STATUS);
         for (String s : listStatus) {
             cbStatus.addItem(s);
         }
 
-        List<String> listStatusRumah = Main.getMasterService().selectAttributByParam("status_rumah");
+        List<String> listStatusRumah = Main.getMasterService().selectAttributByParam(Status.STATUS_RUMAH);
         for (String rm : listStatusRumah) {
             cbStatusRumah.addItem(rm);
         }
 
-        List<String> listPinjaman = Main.getMasterService().selectAttributByParam("pinjaman");
+        List<String> listPinjaman = Main.getMasterService().selectAttributByParam(Status.PINJAMAN);
         for (String p : listPinjaman) {
             cbPinjaman.addItem(p);
         }
 
-        List<String> listPekerjaan = Main.getMasterService().selectAttributByParam("pekerjaan");
+        List<String> listPekerjaan = Main.getMasterService().selectAttributByParam(Status.PEKERJAAN);
         for (String pkj : listPekerjaan) {
             cbPekerjaaan.addItem(pkj);
         }

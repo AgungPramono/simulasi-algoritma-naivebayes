@@ -77,7 +77,7 @@ public class CustomerDao {
 
         StringBuilder sb = new StringBuilder("select distinct ");
 
-        switch (param) {
+        switch (param.toLowerCase()) {
             case "penghasilan":
                 sb.append("penghasilan ");
                 break;
