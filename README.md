@@ -2,7 +2,7 @@
 
 ## Studi Kasus : Penentuan Kelayakan Kredit Nasabah
 
-1. Attribut :
+### Attribut :
 
  * PENGHASILAN,
  * STATUS,
@@ -10,6 +10,6 @@
  * PINJAMAN,
  * PEKERJAAN
 
-2. Label/Class
+### Label/Class
 
- * Klasifikasi
+ * KLASIFIKASI
