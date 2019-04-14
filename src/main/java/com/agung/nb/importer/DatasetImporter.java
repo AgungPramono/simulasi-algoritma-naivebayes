@@ -12,7 +12,7 @@
  */
 package com.agung.nb.importer;
 
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,7 +34,7 @@ public class DatasetImporter {
 
     public static HasilImportDataset proses(File file,String sparator) throws FileNotFoundException {
         try {
-            List<Customer> dataNasabah = new ArrayList<>();
+            List<Nasabah> dataNasabah = new ArrayList<>();
 
             HasilImportDataset hasil = new HasilImportDataset();
             hasil.setSucces(dataNasabah);
@@ -52,7 +52,7 @@ public class DatasetImporter {
                 String[] baris = data.split(sparator);
 //                System.out.println("jumlah kolom " + baris.length);
 
-                Customer n = new Customer();
+                Nasabah n = new Nasabah();
                 n.setNamaNasabah(baris[0]);
                 n.setPenghasilan(baris[1]);
                 n.setStatus(baris[2]);

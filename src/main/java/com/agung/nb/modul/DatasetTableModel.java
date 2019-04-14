@@ -12,7 +12,7 @@
  */
 package com.agung.nb.modul;
 
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -22,11 +22,11 @@ import javax.swing.table.AbstractTableModel;
  * @author agung
  */
 public class DatasetTableModel extends AbstractTableModel {
-    private List<Customer> result = new ArrayList<>();
+    private List<Nasabah> result = new ArrayList<>();
         private final String[] header = {"Nama Nasabah", "Penghasilan", "Status", "Status Rumah",
             "Pinjaman", "Pekerjaan", "Klasifikasi"};
 
-        public DatasetTableModel(List<Customer> list) {
+        public DatasetTableModel(List<Nasabah> list) {
             this.result = list;
         }
 
@@ -47,7 +47,7 @@ public class DatasetTableModel extends AbstractTableModel {
 
         @Override
         public Object getValueAt(int rowIndex, int columnIndex) {
-            Customer n = result.get(rowIndex);
+            Nasabah n = result.get(rowIndex);
             switch (columnIndex) {
                 case 0:
                     return n.getNamaNasabah();

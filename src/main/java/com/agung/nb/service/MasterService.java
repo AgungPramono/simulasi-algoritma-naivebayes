@@ -13,7 +13,7 @@
 package com.agung.nb.service;
 
 import com.agung.nb.dao.CustomerDao;
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import com.agung.nb.helper.Status;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -46,7 +46,7 @@ public class MasterService{
      * unntuk menjaga konsistensi data
      * @param n Objek dari kelas Customer
      */
-    public void save(Customer n){
+    public void save(Nasabah n){
         if (n != null) {
             try {
                 con.setAutoCommit(false);
@@ -63,7 +63,7 @@ public class MasterService{
         }
     }
 
-    public void delete(Customer n) {
+    public void delete(Nasabah n) {
         if (n !=null) {
             try {
                 nd.delete(n);
@@ -83,7 +83,7 @@ public class MasterService{
         return null;
     }
 
-    public List<Customer> cariSemua() {
+    public List<Nasabah> cariSemua() {
         try {
             return nd.cariSemua();
         } catch (Exception ex) {

@@ -16,7 +16,7 @@ package com.agung.nb.domain;
  *
  * @author agung
  */
-public class Customer {
+public class Nasabah {
     private Integer id;
     private String namaNasabah;
     private String penghasilan;

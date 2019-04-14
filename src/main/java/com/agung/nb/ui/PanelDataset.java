@@ -13,7 +13,7 @@
 package com.agung.nb.ui;
 
 import com.agung.nb.Main;
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import com.agung.nb.modul.DatasetTableModel;
 import com.agung.nb.modul.TableUtil;
 import com.agung.nb.ui.ImportDialog;
@@ -29,7 +29,7 @@ public class PanelDataset extends javax.swing.JPanel {
     public static final String PANEL_NAME = "<html><body><b>Dataset</b><body></html>";
     private static PanelDataset panel;
     
-    private List<Customer> listNasabah;
+    private List<Nasabah> listNasabah;
     public PanelDataset() {
         initComponents();
         loadDataToTable();
@@ -229,7 +229,7 @@ public class PanelDataset extends javax.swing.JPanel {
 
     private void btnDeleteAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAllActionPerformed
 
-        List<Customer> listData = Main.getMasterService().cariSemua();
+        List<Nasabah> listData = Main.getMasterService().cariSemua();
 
         if (listData.isEmpty() || listData == null) {
             JOptionPane.showMessageDialog(this, "Tidak ada data yang dapat dihapus, data masih kosong ",

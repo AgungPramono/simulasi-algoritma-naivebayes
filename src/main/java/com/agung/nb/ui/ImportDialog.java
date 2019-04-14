@@ -13,7 +13,7 @@
 package com.agung.nb.ui;
 
 import com.agung.nb.Main;
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import com.agung.nb.importer.DatasetImporter;
 import com.agung.nb.importer.HasilImportDataset;
 import java.awt.Toolkit;
@@ -315,7 +315,7 @@ public class ImportDialog extends javax.swing.JDialog{
                 }
                 
                 HasilImportDataset hasil = DatasetImporter.proses(selectedFile, sparator);
-                for (Customer n : hasil.getSucces()) {
+                for (Nasabah n : hasil.getSucces()) {
                     Main.getMasterService().save(n);
                     lblStatus.setText("Sedang memproses ...");
                 }               

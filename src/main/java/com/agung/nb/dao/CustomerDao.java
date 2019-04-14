@@ -1,6 +1,6 @@
 package com.agung.nb.dao;
 
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import com.agung.nb.helper.RowMapperHelper;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,7 +36,7 @@ public class CustomerDao {
         countAllStatement = this.con.prepareStatement(SqlHelper.COUNT_ALL);
     }
 
-    public void saveOrUpdate(Customer nasabah) throws SQLException {
+    public void saveOrUpdate(Nasabah nasabah) throws SQLException {
         if (nasabah.getId() == null) {
 
             insertStatement.setString(1, nasabah.getNamaNasabah());
@@ -62,7 +62,7 @@ public class CustomerDao {
         }
     }
 
-    public void delete(Customer nasabah) throws SQLException {
+    public void delete(Nasabah nasabah) throws SQLException {
         deleteStatement.setInt(1, nasabah.getId());
         deleteStatement.executeUpdate();
     }
@@ -109,12 +109,12 @@ public class CustomerDao {
         return result;
     }
 
-    public List<Customer> cariSemua() throws SQLException, Exception {
-        List<Customer> result = new ArrayList<>();
+    public List<Nasabah> cariSemua() throws SQLException, Exception {
+        List<Nasabah> result = new ArrayList<>();
 
         ResultSet rs = selectAllStatement.executeQuery();
         while (rs.next()) {
-            Customer n =  RowMapperHelper.mapRowToCustomer(rs);
+            Nasabah n =  RowMapperHelper.toNasabah(rs);
             result.add(n);
         }
         return result;

@@ -12,7 +12,7 @@
  */
 package com.agung.nb.importer;
 
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +21,13 @@ import java.util.List;
  * @author agung
  */
 public class HasilImportDataset {
-    private List<Customer> succes = new ArrayList<>();
+    private List<Nasabah> succes = new ArrayList<>();
 
-    public List<Customer> getSucces() {
+    public List<Nasabah> getSucces() {
         return succes;
     }
 
-    public void setSucces(List<Customer> succes) {
+    public void setSucces(List<Nasabah> succes) {
         this.succes = succes;
     }
 }

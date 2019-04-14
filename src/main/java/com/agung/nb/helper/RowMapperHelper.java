@@ -5,7 +5,7 @@
  */
 package com.agung.nb.helper;
 
-import com.agung.nb.domain.Customer;
+import com.agung.nb.domain.Nasabah;
 import com.agung.nb.domain.Testing;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,8 +16,8 @@ import java.sql.SQLException;
  */
 public class RowMapperHelper {
 
-    public static Customer mapRowToCustomer(ResultSet rs) throws Exception {
-        Customer n = new Customer();
+    public static Nasabah toNasabah(ResultSet rs) throws Exception {
+        Nasabah n = new Nasabah();
 
         n.setId(rs.getInt("id"));
         n.setNamaNasabah(rs.getString("nama_anggota"));
